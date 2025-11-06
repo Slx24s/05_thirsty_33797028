@@ -1,0 +1,44 @@
+<!doctype html>
+<html> 
+ <head> 
+   <title>Customer Survey - <%=shopName%></title>
+   <link rel="stylesheet" href="/styles.css">
+ </head> 
+ <body>
+  <div class="container">
+   <h1>Customer Survey - <%=shopName%></h1>
+   <p>Help us improve by completing this short survey!</p>
+   
+   <form method="POST" action="/survey_results">
+       <label for="first">First Name:</label>
+       <input id="first" type="text" name="first" required/>
+       
+       <label for="surname">Surname:</label>
+       <input id="surname" type="text" name="surname" required/>
+       
+       <label for="email">Email Address:</label>
+       <input id="email" type="email" name="email" required/>
+       
+       <label for="age">How old are you?</label>
+       <input id="age" type="text" name="age" required/>
+       
+       <label>Which of the following drinks categories do you consume?</label>
+       <div style="margin: 15px 0;">
+         <% for(let i = 0; i < productCategories.length; i++) { %>
+           <div style="margin-bottom: 10px;">
+             <input type="radio" id="category_<%= i %>" name="category" value="<%= productCategories[i] %>" <%= i === 0 ? 'checked' : '' %>>
+             <label for="category_<%= i %>" style="display: inline; margin-left: 8px; font-weight: normal;"><%= productCategories[i] %></label>
+           </div>
+         <% } %>
+       </div>
+       
+       <div style="margin: 20px 0;">
+         <input type="checkbox" id="student" name="student" value="yes">
+         <label for="student" style="display: inline; margin-left: 8px; font-weight: normal;">Are you a student?</label>
+       </div>
+       
+       <input type="submit" value="Submit Survey"/>
+   </form>
+  </div>
+ </body> 
+</html>
