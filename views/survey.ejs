@@ -5,24 +5,24 @@
    <link rel="stylesheet" href="/styles.css">
  </head> 
  <body>
-  <div class="container">
+  <div class="form-container">
    <h1>Customer Survey - <%=shopName%></h1>
    <p>Help us improve by completing this short survey!</p>
    
    <form method="POST" action="/survey_results">
-       <label for="first">First Name:</label>
-       <input id="first" type="text" name="first" required/>
+       <label for="first">First Name</label>
+       <input id="first" type="text" name="first" placeholder="Your first name" required/>
        
-       <label for="surname">Surname:</label>
-       <input id="surname" type="text" name="surname" required/>
+       <label for="surname">Surname</label>
+       <input id="surname" type="text" name="surname" placeholder="Your surname" required/>
        
-       <label for="email">Email Address:</label>
-       <input id="email" type="email" name="email" required/>
+       <label for="email">Email Address</label>
+       <input id="email" type="email" name="email" placeholder="your.email@example.com" required/>
        
-       <label for="age">How old are you?</label>
-       <input id="age" type="text" name="age" required/>
+       <label for="age">Your Age</label>
+       <input id="age" type="text" name="age" placeholder="Enter your age" required/>
        
-       <label>Which of the following drinks categories do you consume?</label>
+       <label style="margin-top: 20px;">Preferred Drink Category</label>
        <div style="margin: 15px 0;">
          <% for(let i = 0; i < productCategories.length; i++) { %>
            <div style="margin-bottom: 10px;">
@@ -37,7 +37,7 @@
          <label for="student" style="display: inline; margin-left: 8px; font-weight: normal;">Are you a student?</label>
        </div>
        
-       <input type="submit" value="Submit Survey"/>
+       <input type="submit" value="Submit Survey" style="margin-top: 30px;"/>
    </form>
   </div>
  </body> 
